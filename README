@@ -1,0 +1,65 @@
+/**********************************************************
+* HW4
+* Comp 15
+* README
+* Sam Lacet-Brown
+* November 2020
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make 
+     - run executable with
+            ./hw4
+
+Program Purpose:
+The program initalizes a Binary Search Tree that tracks how many instances
+of each number it has.
+
+
+Acknowledgements: The lectures and functions (such as tree height) we covered in lab
+
+Files: 
+README: this file
+
+Makefile
+
+hw4.cpp:
+     Handles simple driver functions including testing by inserting/deleting
+
+test.cpp:
+    Tests various edge cases
+
+BinarySearchTree.cpp:
+     Implementation of BST class.  Main
+     functionality of making and updating the tree.
+
+BinarySearchTree.h:
+        Interface of BST class.
+
+output1.txt: Output of hw4.cpp
+
+output2.txt: Output of reference program
+
+Testing: 
+I started by just trying to run the hw4.cpp file, and I had issues with the
+insert function as I had forgot to actually set the root to what was returned.
+I also had issues with find_min/max function, as originally it searched for the
+node without using a while loop and did not work. Once hw4 was working, I made
+a test file and used that to check my functions. My test file checks each of
+the potential cases of removals, with zero, one, and two children respectivily,
+as well as deleting the root. It also checks copying and assignment and the 
+contains function.
+
+1. Remove uses find_min in order to move the approrpite child up the tree
+to take the space of the removed node
+2. Yes
+3a. It could return null because if it is called on a child of a node
+which has no children, it will return the node that was passed into it,
+which, in this case, would be nullptr.
+4. look left, if null, return the current space, if  not,
+go to the left child
+5. look right, if null, return the current space, if  not, 
+go to the right child
+6. go left of a node, go right, go to the root, and delete each
+of nodes you encounter, then stop and return if a node is null
